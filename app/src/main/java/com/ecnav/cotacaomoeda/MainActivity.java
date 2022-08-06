@@ -20,6 +20,7 @@ import com.ecnav.cotacaomoeda.databinding.ActivityMainBinding;
 import com.ecnav.cotacaomoeda.model.Currency;
 import com.ecnav.cotacaomoeda.ui.MoreDetailsActivity;
 import com.ecnav.cotacaomoeda.util.Util;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -50,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         proximity = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-        sensorManager.registerListener(this, proximity, SensorManager.SENSOR_DELAY_NORMAL);
 
         currencyList = getCurrencyInfo();
 
@@ -132,11 +132,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     private List<Currency> getCurrencyInfo()
     {
-        List<Currency> localCurrencyList = new Repository().getCurrencies(currencyArrayList ->
+        return new Repository().getCurrencies(currencyArrayList ->
         {
             updateCurrency();
         });
-        return localCurrencyList;
     }
 
     private void updateCurrency()
@@ -175,7 +174,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onResume()
     {
-        // Register a listener for the sensor.
         super.onResume();
         sensorManager.registerListener(this, proximity, SensorManager.SENSOR_DELAY_NORMAL);
     }
@@ -183,7 +181,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onPause()
     {
-        // Be sure to unregister the sensor when the activity pauses.
         super.onPause();
         sensorManager.unregisterListener(this);
     }
@@ -193,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     {
         float distance = sensorEvent.values[0];
         getCurrencyInfo();
-        Log.d("TAG", "onSensorChanged: " + distance);
+        Snackbar.make(binding.fithCurrency, R.string.updateNotificationText, Snackbar.LENGTH_SHORT).show();
     }
 
     @Override

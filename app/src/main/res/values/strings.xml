@@ -7,4 +7,5 @@
     <string name="pctChangeText">Pct Change:</string>
     <string name="askText">Ask:</string>
     <string name="timestampText">Timestamp:</string>
+    <string name="updateNotificationText">Updating</string>
 </resources>

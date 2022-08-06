@@ -43,10 +43,6 @@ public class Repository
                     e.printStackTrace();
                 }
             }
-//            for (int i = 0; i < response.length(); i++)
-//            {
-
-//            }
             if (null != callBack)
             {
                 callBack.processFinished(currencyArrayList);
