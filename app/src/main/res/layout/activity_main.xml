@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/firstCurrency"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="@dimen/cornerRadius"
+                    app:layout_constraintBottom_toTopOf="@+id/secondCurrency"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/firstCurrencyName"
+                            style="@style/CurrencyNameStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/textViewPadding"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/firstCurrencyBid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintStart_toEndOf="@+id/firstCurrencyBidTextView"
+                            app:layout_constraintTop_toBottomOf="@+id/firstCurrencyName" />
+
+                        <TextView
+                            android:id="@+id/firstCurrencyHigh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintStart_toEndOf="@+id/firstCurrencyHighTextView"
+                            app:layout_constraintTop_toBottomOf="@+id/firstCurrencyBid" />
+
+                        <TextView
+                            android:id="@+id/firstCurrencyLow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/firstCurrencyLowTextView"
+                            app:layout_constraintTop_toBottomOf="@+id/firstCurrencyHigh" />
+
+                        <TextView
+                            android:id="@+id/firstCurrencyBidTextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/bidText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/firstCurrencyName" />
+
+                        <TextView
+                            android:id="@+id/firstCurrencyHighTextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/highText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/firstCurrencyBidTextView" />
+
+                        <TextView
+                            android:id="@+id/firstCurrencyLowTextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/lowText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/firstCurrencyHighTextView" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/secondCurrency"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="@dimen/cornerRadius"
+                    app:layout_constraintBottom_toTopOf="@+id/thirdCurrency"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/firstCurrency">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/secondCurrencyName"
+                            style="@style/CurrencyNameStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/textViewPadding"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/secondCurrencyBid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintStart_toEndOf="@+id/secondCurrencyBidTextView"
+                            app:layout_constraintTop_toBottomOf="@+id/secondCurrencyName" />
+
+                        <TextView
+                            android:id="@+id/secondCurrencyHigh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintStart_toEndOf="@+id/secondCurrencyHighTextView"
+                            app:layout_constraintTop_toBottomOf="@+id/secondCurrencyBid" />
+
+                        <TextView
+                            android:id="@+id/secondCurrencyLow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/secondCurrencyLowtextView"
+                            app:layout_constraintTop_toBottomOf="@+id/secondCurrencyHigh" />
+
+                        <TextView
+                            android:id="@+id/secondCurrencyBidTextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/bidText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/secondCurrencyName" />
+
+                        <TextView
+                            android:id="@+id/secondCurrencyHighTextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/highText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/secondCurrencyBidTextView" />
+
+                        <TextView
+                            android:id="@+id/secondCurrencyLowtextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/lowText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/secondCurrencyHighTextView" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/thirdCurrency"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="@dimen/cornerRadius"
+                    app:layout_constraintBottom_toTopOf="@+id/forthCurrency"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/secondCurrency">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/thirdCurrencyName"
+                            style="@style/CurrencyNameStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/textViewPadding"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/thirdCurrencyBid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintStart_toEndOf="@+id/thirdCurrencyBidTextView"
+                            app:layout_constraintTop_toBottomOf="@+id/thirdCurrencyName" />
+
+                        <TextView
+                            android:id="@+id/thirdCurrencyHigh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintStart_toEndOf="@+id/thirdCurrencyHighTextView"
+                            app:layout_constraintTop_toBottomOf="@+id/thirdCurrencyBid" />
+
+                        <TextView
+                            android:id="@+id/thirdCurrencyLow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/thirdCurrencyLowtextView"
+                            app:layout_constraintTop_toBottomOf="@+id/thirdCurrencyHigh" />
+
+                        <TextView
+                            android:id="@+id/thirdCurrencyBidTextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/bidText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/thirdCurrencyName" />
+
+                        <TextView
+                            android:id="@+id/thirdCurrencyHighTextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/highText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/thirdCurrencyBidTextView" />
+
+                        <TextView
+                            android:id="@+id/thirdCurrencyLowtextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/lowText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/thirdCurrencyHighTextView" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/forthCurrency"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="@dimen/cornerRadius"
+                    app:layout_constraintBottom_toTopOf="@+id/fithCurrency"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/thirdCurrency">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/forthCurrencyName"
+                            style="@style/CurrencyNameStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/textViewPadding"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/forthCurrencyBid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintStart_toEndOf="@+id/forthCurrencyBidTextView"
+                            app:layout_constraintTop_toBottomOf="@+id/forthCurrencyName" />
+
+                        <TextView
+                            android:id="@+id/forthCurrencyHigh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintStart_toEndOf="@+id/forthCurrencyHighTextView"
+                            app:layout_constraintTop_toBottomOf="@+id/forthCurrencyBid" />
+
+                        <TextView
+                            android:id="@+id/forthCurrencyLow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/forthCurrencyLowtextView"
+                            app:layout_constraintTop_toBottomOf="@+id/forthCurrencyHigh" />
+
+                        <TextView
+                            android:id="@+id/forthCurrencyBidTextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/bidText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/forthCurrencyName" />
+
+                        <TextView
+                            android:id="@+id/forthCurrencyHighTextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/highText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/forthCurrencyBidTextView" />
+
+                        <TextView
+                            android:id="@+id/forthCurrencyLowtextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/lowText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/forthCurrencyHighTextView" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fithCurrency"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="@dimen/cornerRadius"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/forthCurrency">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/fithCurrencyName"
+                            style="@style/CurrencyNameStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/textViewPadding"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/fithCurrencyBid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintStart_toEndOf="@+id/fithCurrencyBidTextView"
+                            app:layout_constraintTop_toBottomOf="@+id/fithCurrencyName" />
+
+                        <TextView
+                            android:id="@+id/fithCurrencyHigh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintStart_toEndOf="@+id/fithCurrencyHighTextView"
+                            app:layout_constraintTop_toBottomOf="@+id/fithCurrencyBid" />
+
+                        <TextView
+                            android:id="@+id/fithCurrencyLow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/fithCurrencyLowtextView"
+                            app:layout_constraintTop_toBottomOf="@+id/fithCurrencyHigh" />
+
+                        <TextView
+                            android:id="@+id/fithCurrencyBidTextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/bidText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/fithCurrencyName" />
+
+                        <TextView
+                            android:id="@+id/fithCurrencyHighTextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/highText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/fithCurrencyBidTextView" />
+
+                        <TextView
+                            android:id="@+id/fithCurrencyLowtextView"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:padding="@dimen/valuesPadding"
+                            android:text="@string/lowText"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/fithCurrencyHighTextView" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

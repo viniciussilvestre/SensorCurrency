@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CotacaoMoeda</string>
+    <string name="bidText">Bid:</string>
+    <string name="lowText">Low:</string>
+    <string name="highText">High:</string>
+    <string name="varBidText">Var Bid:</string>
+    <string name="pctChangeText">Pct Change:</string>
+    <string name="askText">Ask:</string>
+    <string name="timestampText">Timestamp:</string>
+</resources>

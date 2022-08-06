@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textViewPadding">5dp</dimen>
+    <dimen name="cornerRadius">12dp</dimen>
+    <dimen name="valuesPadding">2dp</dimen>
+    <dimen name="spaceLayout">8dp</dimen>
+</resources>
