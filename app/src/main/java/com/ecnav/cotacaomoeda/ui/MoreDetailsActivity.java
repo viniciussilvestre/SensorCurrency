@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil;
 import com.ecnav.cotacaomoeda.R;
 import com.ecnav.cotacaomoeda.databinding.ActivityMoreDetailsBinding;
 import com.ecnav.cotacaomoeda.util.Util;
+import com.google.android.material.elevation.SurfaceColors;
 
 public class MoreDetailsActivity extends AppCompatActivity
 {
@@ -19,6 +20,7 @@ public class MoreDetailsActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_more_details);
+        getWindow().setStatusBarColor(SurfaceColors.SURFACE_2.getColor(this));
         Intent intent = getIntent();
         binding.currencyName.setText(intent.getStringExtra(Util.CODE));
         binding.currencyBid.setText(String.valueOf(intent.getDoubleExtra(Util.BID, 0.0)));

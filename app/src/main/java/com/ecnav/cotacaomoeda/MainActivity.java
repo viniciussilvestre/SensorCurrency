@@ -1,6 +1,7 @@
 package com.ecnav.cotacaomoeda;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -8,7 +9,6 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -20,6 +20,8 @@ import com.ecnav.cotacaomoeda.databinding.ActivityMainBinding;
 import com.ecnav.cotacaomoeda.model.Currency;
 import com.ecnav.cotacaomoeda.ui.MoreDetailsActivity;
 import com.ecnav.cotacaomoeda.util.Util;
+import com.google.android.material.color.DynamicColors;
+import com.google.android.material.elevation.SurfaceColors;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
@@ -47,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        //DynamicColors.applyToActivitiesIfAvailable(getApplication());
+        getWindow().setStatusBarColor(SurfaceColors.SURFACE_2.getColor(this));
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
