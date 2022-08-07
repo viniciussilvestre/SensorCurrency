@@ -1,7 +1,6 @@
 package com.ecnav.cotacaomoeda;
 
 import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -9,6 +8,9 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
+import android.util.Log;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -20,7 +22,6 @@ import com.ecnav.cotacaomoeda.databinding.ActivityMainBinding;
 import com.ecnav.cotacaomoeda.model.Currency;
 import com.ecnav.cotacaomoeda.ui.MoreDetailsActivity;
 import com.ecnav.cotacaomoeda.util.Util;
-import com.google.android.material.color.DynamicColors;
 import com.google.android.material.elevation.SurfaceColors;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -136,10 +137,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     private List<Currency> getCurrencyInfo()
     {
-        return new Repository().getCurrencies(currencyArrayList ->
-        {
-            updateCurrency();
-        });
+        return new Repository().getCurrencies(currencyArrayList -> updateCurrency());
     }
 
     private void updateCurrency()
@@ -193,8 +191,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void onSensorChanged(SensorEvent sensorEvent)
     {
         float distance = sensorEvent.values[0];
-        getCurrencyInfo();
-        Snackbar.make(binding.fithCurrency, R.string.updateNotificationText, Snackbar.LENGTH_SHORT).show();
+        if (distance < 5)
+        {
+            getCurrencyInfo();
+            Snackbar.make(binding.fithCurrency, R.string.updateNotificationText, Snackbar.LENGTH_SHORT).show();
+            Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            vibrator.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE));
+        }
     }
 
     @Override
