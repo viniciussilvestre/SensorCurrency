@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        //DynamicColors.applyToActivitiesIfAvailable(getApplication());
         getWindow().setStatusBarColor(SurfaceColors.SURFACE_2.getColor(this));
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
